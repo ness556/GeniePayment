@@ -7,7 +7,8 @@ export const state = () => (
   {
     auth: {},
     accessToken:'',
-    loggedIn: false
+    loggedIn: false,
+    smsResult:false
   }
 )
 
@@ -63,6 +64,7 @@ export const mutations = {
   sendSMS (state:any, payload:any) {
     console.log('send : ' + payload.karte + ' ' + payload.tel);
     // TODO SMSの送信処理
+    state.smsResult = true;
   },
   setAuth (state:any, auth:any) {
     state.accessToken = auth.accessToken;

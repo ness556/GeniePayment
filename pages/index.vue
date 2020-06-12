@@ -36,7 +36,6 @@
     >
       <v-card>
         <v-card-title class="headline">患者のクレジット情報が登録されていません。</v-card-title>
-
         <v-card-text>
           SMSでクレジットカードによる請求情報を送信します。
         </v-card-text>
@@ -108,6 +107,7 @@ export default {
     sendSMS () {
       const payload = { karte: this.karte, tel:this.tel, target:config.TARGET_API1}
       this.$store.commit('sendSMS', payload)
+      console.log(this.$store['state']['smsResult'])
     }
   }
 }
