@@ -60,6 +60,10 @@ export const mutations = {
   send (state:any, payload:any) {
     console.log('send : ' + payload.karte + ' ' + payload.billing);
   },
+  sendSMS (state:any, payload:any) {
+    console.log('send : ' + payload.karte + ' ' + payload.tel);
+    // TODO SMSの送信処理
+  },
   setAuth (state:any, auth:any) {
     state.accessToken = auth.accessToken;
   },
