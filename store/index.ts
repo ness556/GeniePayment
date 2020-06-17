@@ -8,7 +8,8 @@ export const state = () => (
     auth: {},
     accessToken:'',
     loggedIn: false,
-    smsResult:false
+    smsResult:false,
+    clientId: '',
   }
 )
 
@@ -58,8 +59,14 @@ export const mutations = {
         break;
     }
   },
-  send (state:any, payload:any) {
+  searchPatient (state:any, payload:any) {
     console.log('send : ' + payload.karte + ' ' + payload.billing);
+    // TODO APIコール
+    if(payload.karte = '1234'){
+      state.clientId = '1111'
+    }else{
+      state.clientId = '';
+    }
   },
   sendSMS (state:any, payload:any) {
     console.log('send : ' + payload.karte + ' ' + payload.tel);
